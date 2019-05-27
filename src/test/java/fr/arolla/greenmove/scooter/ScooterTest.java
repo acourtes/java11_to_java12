@@ -8,8 +8,8 @@ public class ScooterTest {
 
     @Test
     public void must_display_nicely_scooter_properties() {
-        final Scooter scooter = new Scooter(1, Provider.BOLT, Country.FR, Currency.EUR);
-        final String lineFeed = System.getProperty("line.separator");
+        final Scooter scooter = new Scooter(1, Provider.BOLT, Country.FR, 0);
+        final String lineFeed = "\n";
 
         final String expectedInfos = "Scooter properties : " + lineFeed
                 + " * Id : 1" + lineFeed
@@ -23,7 +23,7 @@ public class ScooterTest {
 
     @Test
     public void must_display_alert() {
-        final Scooter scooter = new Scooter(1, Provider.BIRD, Country.CH, Currency.CHF);
+        final Scooter scooter = new Scooter(1, Provider.BIRD, Country.CH, 0);
         final String message = "Be careful, you're approaching the lake";
         final String expectedAlert = "Alert from your bird scooter : " + message + "!";
 

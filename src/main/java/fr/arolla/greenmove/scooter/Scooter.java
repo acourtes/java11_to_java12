@@ -7,12 +7,14 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Scooter {
 
-    private final static String lineFeed = System.getProperty("line.separator");
+    // Why using Unix end of line here ?
+    // => Because the indent method uses \n by default...
+    private final static String lineFeed = "\n";
 
     private int id;
     private Provider provider;
     private Country operatingCountry;
-    private Currency currency;
+    private int mileage;
 
     // We use here indent new method in String class from Java 12
     String displayScooterInfo() {
@@ -30,8 +32,8 @@ public class Scooter {
     // We use here transform new method in String class from Java 12
     // The case is very simple here but you can chain calls
     String displayAlert(String message) {
-        final String genericMessage = "Alert from your %s scooter : ";
-        final String providerName = this.getProvider().toString().toLowerCase();
+        final var genericMessage = "Alert from your %s scooter : ";
+        final var providerName = this.getProvider().toString().toLowerCase();
 
         return message.transform(m -> String.format(genericMessage, providerName) + m + "!");
     }
