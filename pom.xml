@@ -45,7 +45,31 @@
                     <configuration>
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
+                        <!-- TODO You will have to add something here to tell the compiler
+                             you want to use experimental stuff from the JDK 12 (enhanced switch for example) -->
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M3</version>
+                    <!-- TODO You will have to add something here to tell the plugin
+                             you want to use experimental stuff from the JDK 12 (enhanced switch for example) -->
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>3.0.0-M3</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <!-- TODO You will have to add something here to tell the plugin
+                             you want to use experimental stuff from the JDK 12 (enhanced switch for example) -->
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -54,6 +78,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

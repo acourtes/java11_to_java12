@@ -20,6 +20,8 @@ public class FileUtilsTest {
 
     @Test
     public void should_find_the_byte_where_files_are_different() throws IOException {
+        // For this test, if you are using Windows, think of changing the end of line of these both files
+        // and use Unix end if line (LF). Or put 51 instead of 50 :)
         final long result = FileUtils.checkFiles(originalEuropeanAnthem, copiedEuropeanAnthemWithError);
 
         Assertions.assertThat(result).isEqualTo(50);

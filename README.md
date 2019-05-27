@@ -24,7 +24,7 @@ You will also discover the usage of a new Collector.
   * More functional
   
 Unfortunately, these improvements are still experimental and need to be activated to be used.
-Have a look into the POM file and you'll see that we pass a specific argument to the compiler for that.
+You will have the POM file to modify...
 
 ### Collectors
 * teeing

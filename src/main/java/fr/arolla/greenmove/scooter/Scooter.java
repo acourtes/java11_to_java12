@@ -7,16 +7,17 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Scooter {
 
-    private final static String lineFeed = System.getProperty("line.separator");
+    // Why using Unix end of line here ?
+    private final static String lineFeed = "\n";
 
     private int id;
     private Provider provider;
     private Country operatingCountry;
-    private Currency currency;
+    private int mileage;
 
     // TODO by using new method in String class from Java 12
     String displayScooterInfo() {
-        final String space = " ";
+        final var space = " ";
 
         return "Scooter properties : " + lineFeed
                 + space + "* Id : " + this.getId() + lineFeed +
@@ -28,8 +29,8 @@ public class Scooter {
 
     // TODO by using new method in String class from Java 12
     String displayAlert(String message) {
-        final String genericMessage = "Alert from your %s scooter : ";
-        final String providerName = this.getProvider().toString().toLowerCase();
+        final var genericMessage = "Alert from your %s scooter : ";
+        final var providerName = this.getProvider().toString().toLowerCase();
 
         return String.format(genericMessage, providerName) + message + "!";
     }
