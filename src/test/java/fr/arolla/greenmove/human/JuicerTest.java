@@ -1,10 +1,9 @@
 package fr.arolla.greenmove.human;
 
 import fr.arolla.greenmove.scooter.Country;
-import fr.arolla.greenmove.scooter.Currency;
 import fr.arolla.greenmove.scooter.Provider;
 import fr.arolla.greenmove.scooter.Scooter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.List;

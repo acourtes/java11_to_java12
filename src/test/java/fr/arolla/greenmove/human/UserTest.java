@@ -7,9 +7,9 @@ import fr.arolla.greenmove.scooter.Provider;
 import fr.arolla.greenmove.scooter.Scooter;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -18,13 +18,13 @@ public class UserTest {
     private SoftAssertions should;
     private User user;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         should = new SoftAssertions();
         user = new User(1);
     }
 
-    @After
+    @AfterEach
     public void finalizeTest() {
         should.assertAll();
     }
